@@ -98,7 +98,6 @@ def logmein():
     flash('Please check your login details and try again.')
     return redirect(url_for('login'))
 
-
 @app.route('/profile')
 @login_required
 def profile():
@@ -111,7 +110,6 @@ def return_file():
     #the pdf will be inside static folder
 
     return send_file('static/MY.pdf', attachment_filename='MY.pdf')
-
 
 @app.route('/logout')
 @login_required
