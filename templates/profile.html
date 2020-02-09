@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="column is-4 is-offset-4">
+    <h1 class="title" style="color:blue;text-align:center;">Welcome {{ name }}! to my Personal Website </h1>
+    <h3 style="color:red;">click on Download Button</h3>
+    <!-- <div class="box">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="notification is-danger">
+        {{ messages[0] }}
+        
+        </div> -->
+        {% endif %}
+        {% endwith %}
+        <!--Welcome, {{ name }}! -->
+    </div>
+    <body class="body">
+        <div class="container" align="center">
+            <a href="/return_file" target="blank" download="ABHINAV KUMAR SINGH RESUME">
+            <button class=" btn btn-default">Download Resume</button>
+    <!--<a href="/return_file" target="blank" download="ABHINAV KUMAR SINGH RESUME">
+        <button class='btn btn-default'></button></a> -->
+</div>
+{% endblock %}
