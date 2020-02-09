@@ -1,3 +1,4 @@
+import os
 import psycopg2
 from flask import *
 from flask_bootstrap import Bootstrap
@@ -12,8 +13,10 @@ from sqlalchemy.dialects.postgresql import JSON
 
 app = Flask(__name__)
 
-app.config['SECRET_KEY']='THISISmysupersecretKEY'
-app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:04051998abhinav@localhost:5433/USERSS'
+app.config['SECRET_KEY']='YOURSECRETKEY'
+#IF YOU HAVE TO CONNECT TO HEROKU POSTGRE THEN 
+app.config['SQLALCHEMY_DATABASE_URI']='postgres://***********************amazonaws.com:5432/d5***********h'
+#'postgresql://postgres:******yourpassword******@localhost:5433/USERSS'
 
 Bootstrap(app)
 
@@ -31,6 +34,7 @@ class Users(UserMixin, db.Model):
     name=db.Column(db.String(15),unique=False, nullable = False)
     email=db.Column(db.String(30),unique=True, nullable = False)
     password=db.Column(db.String(80), nullable=False)
+    db.create_all()
     print("database connected")
 
 @login_manager.user_loader
@@ -103,12 +107,10 @@ def profile():
 @app.route('/return_file')
 @login_required
 def return_file():
-    #This is just for checking
-    return send_file()
-    
     #below this line is the correct line
     #the pdf will be inside static folder
-    #return send_file('static/Abhinav_Resume.pdf', attachment_filename='Abhinav_Resume.pdf')
+
+    return send_file('static/MY.pdf', attachment_filename='MY.pdf')
 
 
 @app.route('/logout')
