@@ -1,8 +1,8 @@
-{% extends "base.html" %}
+{% extends "basenew2.html" %}
 {% block content %}
 <div class="column is-4 is-offset-4">
-    <h1 class="title" style="color:blue;text-align:center;">Welcome {{ name }}! to my Personal Website </h1>
-    <h3 style="color:red;">click on Download Button</h3>
+    <h1 class="title" style="color:white; text-align:center;">Welcome {{ name }}! to my Personal Website </h1>
+    <h3 style="color:rgb(7, 2, 36);">click on option in video to Download the video</h3>
     <!-- <div class="box">
         {% with messages = get_flashed_messages() %}
         {% if messages %}
@@ -12,13 +12,29 @@
         </div> -->
         {% endif %}
         {% endwith %}
-        <!--Welcome, {{ name }}! -->
+    
     </div>
-    <body class="body">
-        <div class="container" align="center">
+    <div class="body">
+        <div class="container" aling="center">
+            <video width="100%" height="350" controls>
+                <source src="static/movie.mp4" type="video/mp4">
+                <source src="static/movie.ogg" type="video/ogg">
+            </video>
+                <!-- no need for download as their is already download option in video tag 
+                    Your browser does not support the video tag.
+        </div>
+    </div>
+        
+    <body class="body"> -->
+        </div>
+        <div class="container" aling="center">
             <a href="/return_file" target="blank" download="NAME OF THE FILE WHICH YOU WANT TO DOWNLOAD">
-            <button class=" btn btn-default">Download</button>
-    <!--<a href="/return_file" target="blank" download="ABHINAV KUMAR SINGH RESUME">
-        <button class='btn btn-default'></button></a> -->
-</div>
+                <div class="row">
+                    <input type="submit" value="DOWNLOAD pdf">
+                </div></a>
+            <!--<button class=" btn btn-default">Download pdf</button>
+    <a href="/return_file" target="blank" download="***************GH R********E">
+        <button class='btn btn-default'></button></a> -->   
+        </div>
+    </div>
 {% endblock %}

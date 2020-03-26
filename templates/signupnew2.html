@@ -1,0 +1,47 @@
+{% extends "basenew2.html" %}
+{% block content %}
+<div class="container" style="float:initial;">
+    <h3>SIGN UP</h3>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="notification is-danger">
+                {{ messages[0] }}. Go to <a href="{{ url_for('login') }}">login page</a>.
+            </div>
+        {% endif %}
+        {% endwith %}
+        <form method="POST" action="/signupme">
+            <div class="row">
+                <div class="col-25">
+                    <label for="fname">NAME</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="name" name="name" placeholder="Your name" autofocus="", required>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-25">
+                    <label for="fname">EMAIL</label>
+                </div>
+                <div class="col-75">
+                    <input type="email" id="email" name="email" placeholder="Your email" autofocus="", required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-25">
+                    <label for="fname">PASSWORD</label>
+                </div>
+                <div class="col-75">
+                    <input type="password" id="password" name="password" placeholder="Your password", required>
+                </div>
+            </div>
+            <div class="row">
+                <input type="submit" value="SIGNUP">
+            </div>
+        </form>
+</div>
+
+{% endblock %}

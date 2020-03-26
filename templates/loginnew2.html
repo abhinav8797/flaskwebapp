@@ -1,0 +1,40 @@
+{% extends "basenew2.html" %}
+
+{% block content %}
+
+<div class="container" style="float:initial;">
+    <h3 class="title">LOGIN</h3>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+    <div class="notification is-danger">
+        {{ messages[0] }}
+    </div>
+        {% endif %}
+        {% endwith %}
+    <form method="POST" action="/logmein">
+    <div class="row">
+        <div class="col-25">
+            <label for="fname">EMAIL</label>
+        </div>
+        <div class="col-75">
+            <input type="email" id="email" name="email" placeholder="Your email" required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-25">
+        <label for="lname">PASSWORD</label>
+        </div>
+        <div class="col-75">
+            <input type="password" id="password" name="password" placeholder="Your password" required>
+        </div>
+    </div>
+    <div class="field">
+        <label class="checkbox">
+            <input type="checkbox">Remember me</label>
+    </div>
+    <div class="row">
+        <input type="submit" value="LOGIN">
+    </div>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AbhinavWebsite</title>
+    <link rel="shortcut icon" type="image/png" href="static/img/myicon.png">
+    <link rel="stylesheet" href="static/CSS/style.css">
+
+</head>
+<body>
+    <ul class="topnav">
+        <li style="float:right">
+            {% if not current_user.is_authenticated %}
+            <a href="{{ url_for('index') }}" class="active">HOME</a>
+            {% endif %}
+        </li>
+        <li style="float:right">
+            {% if not current_user.is_authenticated %}
+            <a href="{{ url_for('signup') }}" class="navbar-item">SIGN-UP</a>
+            {% endif %}
+        </li>
+        <li style="float:right">
+            {% if not current_user.is_authenticated %}
+            <a href="{{ url_for('login') }}" class="navbar-item">LOGIN</a>
+            {%endif%}
+        </li>
+        <li style="float: right;">
+            {% if current_user.is_authenticated %}
+            <a href="{{ url_for('logout') }}" class="navbar-item">LOGOUT</a>
+            {% endif %}    
+        </li>
+    </ul>
+    
+    <div class="content" style="margin-top:30px">
+        {% block content %}
+        
+        {% endblock %}
+    </div>
+    <!-- <div class="content" style="margin-top:30px">
+        <div class="fotter" style="float:inline-start;" style="background:#111;">
+            <h3>Copyright 2020 @ </h3> 
+        </div>
+    </div>-->
+</body>
+</html>
+
