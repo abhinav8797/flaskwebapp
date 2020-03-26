@@ -1,0 +1,157 @@
+* {
+    box-sizing: border-box;
+    }
+
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 10px;
+        background-color: #F88017;
+        margin: 0;
+    }
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    li {
+        float: right;
+    }
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    li a:hover {
+    background-color: #111;
+    }
+    li a:hover:not(.active) {
+    background-color: #111;
+    }
+
+    li a.active {
+    background-color:#110;
+    }
+
+
+
+/* @media screen and (max-width: 900px) {
+        ul{
+            width: 100%;
+            height: auto;
+            position: relative;
+            float: left;
+            padding: 15px;
+        } */
+    /* Footer */
+    
+    
+    .content {
+    max-width: 480px;
+    margin: auto;
+    background:	#F88017;
+    padding: 10px;
+    }
+    .footer {
+    padding: 20px;
+    text-align: center;
+    background:#111;
+    margin-top: 20px;
+    width: 100%;
+    
+    }
+
+    
+    input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 3px solid #ccc;
+    border-radius: 14px;
+    resize: vertical;
+    }
+
+    input[type=email] {
+    width: 100%;
+    padding: 12px;
+    border: 5px solid #ccc;
+    border-radius: 14px;
+    resize: vertical;   
+    }   
+    input[type=password] {
+    width: 100%;
+    padding: 12px;
+    border: 5px solid #ccc;
+    border-radius: 14px;
+    resize: vertical;
+    }
+    label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    }
+
+    input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 18px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: left;
+    }
+
+    input[type=submit]:hover {
+    background-color: #45a049;
+    }
+
+    .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 17px;
+    width: 100%;
+
+    }
+
+    .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+    }
+
+    .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+    }
+
+/* Clear floats after the columns */
+    .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+        .col-25, .col-75, input[type=submit] {
+            width: 100%;
+            margin-top: 0;
+        }
+    }
+
+    @media screen and (max-width: 600px){
+        li {
+            width: 100%;
+            position:relative;
+            height: auto;
+            overflow:auto;
+            text-align: center;
+            float: none;
+        }
+        
+    }
